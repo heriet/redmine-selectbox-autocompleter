@@ -1,0 +1,11 @@
+<script type="text/javascript">
+  (function(){
+    function initSelectboxAutocompleter() {
+      selectbox_autocompleter.generateSelectboxAutocompleter("issue_assigned_to_id");
+    }
+
+    var mo = new MutationObserver(initSelectboxAutocompleter);
+    mo.observe(document.body, { childList: true });
+
+  })();
+</script>

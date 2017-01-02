@@ -1,3 +1,5 @@
+require 'redmine'
+
 Redmine::Plugin.register :selectbox_autocompleter do
   name 'Selectbox Autocompleter plugin'
   author 'heriet'
@@ -6,3 +8,5 @@ Redmine::Plugin.register :selectbox_autocompleter do
   url 'https://github.com/heriet/redmine_selectbox_autocompleter'
   author_url 'http://heriet.info'
 end
+
+require_dependency 'selectbox_autocompleter/hooks'
