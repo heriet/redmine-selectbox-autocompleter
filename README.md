@@ -1,9 +1,9 @@
-= selectbox_autocompleter
+# Redmine Selectbox Autocompleter Plugin
 
 This plugin generates autocomplete box for select box.
 For example, it is useful for assisting input of a select box containing many option elements. 
 
-== Installation
+## Installation
 
 ```
 $ cd $(REDMINE_HOME)/plugin
