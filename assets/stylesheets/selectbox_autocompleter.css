@@ -1,0 +1,16 @@
+.selectbox-autocomplete-span:before {
+  content: "\0A0\01f50d"; /* [&nbsp;] and [emoji: Left-Pointing Magnifying Glass] */
+}
+
+
+#project_quick_jump_box_autocomplete_span:before {
+  content: "";
+}
+
+#wiki_page_parent_id_autocomplete {
+  width: 30%;
+}
+
+#issue_assigned_to_id_autocomplete {
+  width: 30%;
+}

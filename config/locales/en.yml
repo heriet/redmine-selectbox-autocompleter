@@ -1,3 +1,2 @@
-# English strings go here for Rails i18n
 en:
-  # my_label: "My label"
+  label_target_list: "Target List"

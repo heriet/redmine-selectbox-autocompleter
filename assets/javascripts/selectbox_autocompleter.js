@@ -34,15 +34,17 @@ selectbox_autocompleter.generateSelectboxAutocompleter = function(id) {
   var autocomplete = document.createElement('input');
   autocomplete.setAttribute('type', 'text');
   autocomplete.setAttribute('id', autocomplete_id);
+  autocomplete.setAttribute('class', 'selectbox-autocomplete');
   autocomplete.setAttribute('list', datalist_id);
   autocomplete.setAttribute('placeholder', 'Search');
   autocomplete.setAttribute('autocomplete', 'on');
 
-  var seach_icon = document.createElement('span');
-  seach_icon.innerHTML = "&nbsp;&#128269;";
+  var span = document.createElement('span');
+  span.setAttribute('id', autocomplete_id + "_span");
+  span.setAttribute('class', 'selectbox-autocomplete-span');
 
-  parent.appendChild(seach_icon);
-  parent.appendChild(autocomplete);
+  span.appendChild(autocomplete);
+  parent.appendChild(span);
 
   autocomplete.addEventListener('input', function (event) {
     var self = this;
@@ -50,7 +52,10 @@ selectbox_autocompleter.generateSelectboxAutocompleter = function(id) {
 
     Array.prototype.forEach.call(options, function(option) {
       if(option.textContent.trim() == value.trim()) {
-        selectbox.selectedIndex = option.index;
+        if(selectbox.selectedIndex != option.index) {
+          selectbox.selectedIndex = option.index;
+          if (selectbox.onchange) { selectbox.onchange(); }
+        }
         return;
       }
     });

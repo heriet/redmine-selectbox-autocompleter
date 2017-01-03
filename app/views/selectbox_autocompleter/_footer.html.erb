@@ -1,11 +1,12 @@
 <script type="text/javascript">
   (function(){
+    // select autocomplete plugin init
+
     function initSelectboxAutocompleter() {
-      selectbox_autocompleter.generateSelectboxAutocompleter("issue_assigned_to_id");
+      <%= raw generate_target_list_for_js %>.forEach(selectbox_autocompleter.generateSelectboxAutocompleter);
     }
 
     var mo = new MutationObserver(initSelectboxAutocompleter);
-    mo.observe(document.body, { childList: true });
-
+    mo.observe(document.body, { childList: true, subtree: true });
   })();
 </script>
