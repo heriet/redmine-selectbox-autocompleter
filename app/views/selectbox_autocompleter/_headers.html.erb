@@ -1,3 +1,16 @@
+<%
+  if Setting.plugin_selectbox_autocompleter[:autocomplete_type]
+%>
+<%= stylesheet_link_tag 'select2.min.css', :plugin => 'selectbox_autocompleter', :media => 'all' %>
+<%= javascript_include_tag 'select2.full.min.js', :plugin => 'selectbox_autocompleter' %>
+<%
+  end
+%>
+<%
+  if Setting.plugin_selectbox_autocompleter[:autocomplete_type] == 'datalist'
+%>
 <%= stylesheet_link_tag 'selectbox_autocompleter.css', :plugin => 'selectbox_autocompleter', :media => 'all' %>
-
 <%= javascript_include_tag 'selectbox_autocompleter.js', :plugin => 'selectbox_autocompleter' %>
+<%
+  end
+%>

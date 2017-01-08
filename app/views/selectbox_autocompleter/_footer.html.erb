@@ -1,3 +1,29 @@
+<%
+  if Setting.plugin_selectbox_autocompleter[:autocomplete_type] == 'select2'
+%>
+<script type="text/javascript">
+  (function(){
+    // select autocomplete plugin init
+
+    function initSelectboxAutocompleter() {
+      <%= raw generate_target_list_for_js %>.forEach(function (target) {
+         var $selectbox = $('#' + target);
+         if(!$selectbox.hasClass('select2-hidden-accessible')) {
+           $selectbox.select2();
+         }
+      });
+    }
+
+    var mo = new MutationObserver(initSelectboxAutocompleter);
+    mo.observe(document.body, { childList: true, subtree: true });
+  })();
+</script>
+<%
+  end
+%>
+<%
+  if Setting.plugin_selectbox_autocompleter[:autocomplete_type] == 'datalist'
+%>
 <script type="text/javascript">
   (function(){
     // select autocomplete plugin init
@@ -10,3 +36,6 @@
     mo.observe(document.body, { childList: true, subtree: true });
   })();
 </script>
+<%
+  end
+%>
