@@ -16,7 +16,7 @@ Redmine::Plugin.register :selectbox_autocompleter do
        'wiki_page_parent_id',
        'project_quick_jump_box'
      ].join("\r\n"),
-     :mode => 'select2',
+     :autocomplete_type => 'select2',
   }, :partial => 'selectbox_autocompleter/settings')
 
 end
