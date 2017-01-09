@@ -1,0 +1,5 @@
+zh:
+  label_target_list: "目标列表"
+  label_autocomplete_type: "自动完成类型"
+  label_autocomplete_type_select2: "转换为Select2文本框"
+  label_autocomplete_type_datalist: "插入含数据列的文本框"
