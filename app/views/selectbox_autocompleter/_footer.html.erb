@@ -8,14 +8,14 @@
     function initSelectboxAutocompleter() {
       <%= raw generate_target_list_for_js %>.forEach(function (target) {
          var $selectbox = $('#' + target);
-         if(!$selectbox.hasClass('select2-hidden-accessible')) {
+         if(!$selectbox.hasClass('select2-hidden-accessible') && $selectbox.is(':visible')) {
            $selectbox.select2();
          }
       });
     }
 
     var mo = new MutationObserver(initSelectboxAutocompleter);
-    mo.observe(document.body, { childList: true, subtree: true });
+    mo.observe(document.body, { attributes: true, childList: true, subtree: true });
   })();
 </script>
 <%
@@ -33,7 +33,7 @@
     }
 
     var mo = new MutationObserver(initSelectboxAutocompleter);
-    mo.observe(document.body, { childList: true, subtree: true });
+    mo.observe(document.body, { attributes: true, childList: true, subtree: true });
   })();
 </script>
 <%
