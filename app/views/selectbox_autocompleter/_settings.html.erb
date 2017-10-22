@@ -1,8 +1,8 @@
 <p>
     <%= content_tag(:label, l(:label_target_list)) %>
-    <%= text_area_tag "settings[target_list]", @settings[:target_list], :rows => 20 %>
+    <%= text_area_tag "settings[target_list]", @settings['target_list'], :rows => 20 %>
 </p>
 <p>
     <%= content_tag(:label, l(:label_autocomplete_type)) %>
-    <%= select_tag "settings[autocomplete_type]", options_for_select({ l(:label_autocomplete_type_select2) => "select2", l(:label_autocomplete_type_datalist) => "datalist" }, @settings[:autocomplete_type]) %>
+    <%= select_tag "settings[autocomplete_type]", options_for_select({ l(:label_autocomplete_type_select2) => "select2", l(:label_autocomplete_type_datalist) => "datalist" }, @settings['autocomplete_type']) %>
 </p>
