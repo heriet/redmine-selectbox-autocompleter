@@ -9,14 +9,14 @@ Redmine::Plugin.register :selectbox_autocompleter do
   author_url 'http://heriet.info'
 
   settings(:default => {
-    :target_list => [
+    'target_list' => [
        'issue_assigned_to_id',
        'values_assigned_to_id_1',
        'values_author_id_1',
        'wiki_page_parent_id',
        'project_quick_jump_box'
      ].join("\r\n"),
-     :autocomplete_type => 'select2',
+     'autocomplete_type' => 'select2',
   }, :partial => 'selectbox_autocompleter/settings')
 
 end
