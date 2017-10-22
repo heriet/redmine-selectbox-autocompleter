@@ -4,7 +4,7 @@ Redmine::Plugin.register :selectbox_autocompleter do
   name 'Selectbox Autocompleter plugin'
   author 'heriet'
   description 'This plugin generate Autocomplete box for Select box'
-  version '1.1.2'
+  version '1.1.3'
   url 'https://github.com/heriet/redmine-selectbox-autocompleter'
   author_url 'http://heriet.info'
 
