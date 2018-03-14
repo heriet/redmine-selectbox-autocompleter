@@ -1,6 +1,9 @@
 .selectbox-autocomplete-span:before {
   content: "\0A0\01f50d"; /* [&nbsp;] and [emoji: Left-Pointing Magnifying Glass] */
 }
+.selectbox-autocomplete-span {
+  white-space: nowrap;
+}
 
 
 #project_quick_jump_box_autocomplete_span:before {
