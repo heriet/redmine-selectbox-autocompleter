@@ -1,27 +1,27 @@
 'use strict';
 
-var selectbox_autocompleter = selectbox_autocompleter || {};
+var selectboxAutocompleter = selectboxAutocompleter || {};
 
-selectbox_autocompleter.generateSelectboxAutocompleter = function(id) {
+selectboxAutocompleter.generateSelectboxAutocompleter = function(id) {
   var selectbox = document.getElementById(id);
-  var datalist_id =  id + '_name_datalist';
-  var autocomplete_id = id + '_autocomplete';
+  var datalistId =  id + '_name_datalist';
+  var autocompleteId = id + '_autocomplete';
 
-  if(!selectbox || document.getElementById(datalist_id) || document.getElementById(autocomplete_id)) {
+  if(!selectbox || document.getElementById(datalistId) || document.getElementById(autocompleteId)) {
     return;
   }
 
   var options = selectbox.getElementsByTagName("option");
 
-  var name_datalist = document.createElement('datalist');
-  name_datalist.setAttribute('id', datalist_id);
+  var nameDatalist = document.createElement('datalist');
+  nameDatalist.setAttribute('id', datalistId);
 
   var current = "";
 
   Array.prototype.forEach.call(options, function(option) {
-    var option_datalist = document.createElement('option');
-    option_datalist.setAttribute('value', option.textContent);
-    name_datalist.appendChild(option_datalist);
+    var optionDatalist = document.createElement('option');
+    optionDatalist.setAttribute('value', option.textContent);
+    nameDatalist.appendChild(optionDatalist);
 
     if (option.selected) {
       current = option.textContent;
@@ -29,18 +29,18 @@ selectbox_autocompleter.generateSelectboxAutocompleter = function(id) {
   });
 
   var parent = selectbox.parentNode;
-  parent.appendChild(name_datalist);
+  parent.appendChild(nameDatalist);
 
   var autocomplete = document.createElement('input');
   autocomplete.setAttribute('type', 'text');
-  autocomplete.setAttribute('id', autocomplete_id);
+  autocomplete.setAttribute('id', autocompleteId);
   autocomplete.setAttribute('class', 'selectbox-autocomplete');
-  autocomplete.setAttribute('list', datalist_id);
+  autocomplete.setAttribute('list', datalistId);
   autocomplete.setAttribute('placeholder', 'Search');
   autocomplete.setAttribute('autocomplete', 'on');
 
   var span = document.createElement('span');
-  span.setAttribute('id', autocomplete_id + "_span");
+  span.setAttribute('id', autocompleteId + "_span");
   span.setAttribute('class', 'selectbox-autocomplete-span');
 
   span.appendChild(autocomplete);

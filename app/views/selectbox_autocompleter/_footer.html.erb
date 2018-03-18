@@ -29,7 +29,7 @@
     // select autocomplete plugin init
 
     function initSelectboxAutocompleter() {
-      <%= raw generate_target_list_for_js %>.forEach(selectbox_autocompleter.generateSelectboxAutocompleter);
+      <%= raw generate_target_list_for_js %>.forEach(selectboxAutocompleter.generateSelectboxAutocompleter);
     }
 
     var mo = new MutationObserver(initSelectboxAutocompleter);
