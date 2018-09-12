@@ -1,0 +1,5 @@
+pt-BR:
+  label_target_list: "Lista de campos"
+  label_autocomplete_type: "Tipo de autocomplete"
+  label_autocomplete_type_select2: "converter para select2"
+  label_autocomplete_type_datalist: "inserir textbox de pesquisa"
