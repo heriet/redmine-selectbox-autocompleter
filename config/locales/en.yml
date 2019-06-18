@@ -3,3 +3,4 @@ en:
   label_autocomplete_type: "Autocomplete Type"
   label_autocomplete_type_select2: "convert Select2"
   label_autocomplete_type_datalist: "insert Textbox with datalist"
+  label_autocomplete_type_jquery: "insert Textbox with jQuery"

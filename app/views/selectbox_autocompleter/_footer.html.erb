@@ -1,5 +1,6 @@
+<% type = Setting.plugin_selectbox_autocompleter['autocomplete_type'] %>
 <%
-  if Setting.plugin_selectbox_autocompleter['autocomplete_type'] == 'select2'
+  if type == 'select2'
 %>
 <script type="text/javascript">
   (function(){
@@ -22,14 +23,14 @@
   end
 %>
 <%
-  if Setting.plugin_selectbox_autocompleter['autocomplete_type'] == 'datalist'
+  if type == 'datalist' || type == 'jquery'
 %>
 <script type="text/javascript">
   (function(){
     // select autocomplete plugin init
 
     function initSelectboxAutocompleter() {
-      <%= raw generate_target_list_for_js %>.forEach(selectboxAutocompleter.generateSelectboxAutocompleter);
+      <%= raw generate_target_list_for_js %>.forEach(function(target) {selectboxAutocompleter.generateSelectboxAutocompleter(target, '<%= type %>')});
     }
 
     var mo = new MutationObserver(initSelectboxAutocompleter);
