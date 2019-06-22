@@ -5,6 +5,18 @@
   white-space: nowrap;
 }
 
+.ui-autocomplete {
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #FFFFFF;
+}
+.ui-autocomplete .ui-state-focus {
+   background: #e8e9ed;
+   border-style: none;
+   font-weight: normal;
+   color: inherit;
+}
 
 #project_quick_jump_box_autocomplete_span:before {
   content: "";

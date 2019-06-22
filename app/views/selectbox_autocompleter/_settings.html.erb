@@ -4,5 +4,5 @@
 </p>
 <p>
     <%= content_tag(:label, l(:label_autocomplete_type)) %>
-    <%= select_tag "settings[autocomplete_type]", options_for_select({ l(:label_autocomplete_type_select2) => "select2", l(:label_autocomplete_type_datalist) => "datalist" }, @settings['autocomplete_type']) %>
+    <%= select_tag "settings[autocomplete_type]", options_for_select({ l(:label_autocomplete_type_select2) => "select2", l(:label_autocomplete_type_datalist) => "datalist", l(:label_autocomplete_type_jquery) => "jquery" }, @settings['autocomplete_type']) %>
 </p>
