@@ -16,6 +16,7 @@
    border-style: none;
    font-weight: normal;
    color: inherit;
+   margin: 0;
 }
 
 #project_quick_jump_box_autocomplete_span:before {
