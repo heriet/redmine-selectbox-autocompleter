@@ -21,7 +21,7 @@ Redmine::Plugin.register :selectbox_autocompleter do
 
 end
 
-ActionDispatch::Callbacks.to_prepare do
+ActiveSupport::Reloader.to_prepare do
   require File.expand_path('../app/helpers/selectbox_autocompleter_helper', __FILE__)
   ActionView::Base.send :include, SelectboxAutocompleterHelper
 end
