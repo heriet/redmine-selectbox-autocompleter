@@ -1,6 +1,6 @@
 require_dependency 'application_helper'
 
-module ApplicationHelperPatch
+module SelectboxAutocompleter::Patches::ApplicationHelperPatch
   def self.prepended(base)
     base.send(:prepend, InstanceMethods)
   end
