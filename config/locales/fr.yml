@@ -1,0 +1,6 @@
+en:
+  label_target_list: "Liste des champs"
+  label_autocomplete_type: "Type d'autocomplétion"
+  label_autocomplete_type_select2: "Conversion Select2"
+  label_autocomplete_type_datalist: "Insertion Textbox avec datalist"
+  label_autocomplete_type_jquery: "Insertion Textbox avec jQuery"
