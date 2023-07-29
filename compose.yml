@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  redmine:
+    image: redmine:5.0.5
+    ports:
+      - "3000:3000"
+    environment:
+      REDMINE_DB_POSTGRES: db
+      REDMINE_DB_DATABASE: redmine
+      REDMINE_DB_USERNAME: redmine
+      REDMINE_DB_PASSWORD: redmine
+      REDMINE_SECRET_KEY_BASE: supersecretkey
+      REDMINE_DB_PORT: 5432
+    volumes:
+      - .:/usr/src/redmine/plugins/selectbox_autocompleter
+
+  db:
+    image: postgres:15.3
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: redmine
+      POSTGRES_USER: redmine
+      POSTGRES_PASSWORD: redmine
