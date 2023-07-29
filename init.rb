@@ -1,4 +1,5 @@
 require 'redmine'
+require_relative 'lib/selectbox_autocompleter/patches/application_helper_patch'
 
 Redmine::Plugin.register :selectbox_autocompleter do
   name 'Selectbox Autocompleter plugin'
@@ -19,11 +20,13 @@ Redmine::Plugin.register :selectbox_autocompleter do
      'autocomplete_type' => 'select2',
   }, :partial => 'selectbox_autocompleter/settings')
 
+  unless ApplicationHelper.included_modules.include?(SelectboxAutocompleter::Patches::ApplicationHelperPatch)
+    ApplicationHelper.prepend(SelectboxAutocompleter::Patches::ApplicationHelperPatch)
+  end
+
 end
 
-ActionDispatch::Callbacks.to_prepare do
-  require File.expand_path('../app/helpers/selectbox_autocompleter_helper', __FILE__)
-  ActionView::Base.send :include, SelectboxAutocompleterHelper
-end
+require_relative 'app/helpers/selectbox_autocompleter_helper'
+ActionView::Base.send :include, SelectboxAutocompleterHelper
 
-require_dependency 'selectbox_autocompleter/hooks'
+require_relative 'lib/selectbox_autocompleter/hooks'
